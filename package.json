@@ -1,0 +1,15 @@
+{
+    "name": "hashpick",
+    "version": "1.0.0",
+    "description": "Pick a item from an array based on the hash of a value",
+    "main": "hashpick.js",
+    "scripts": {
+        "test": "mocha test"
+    },
+    "author": "Roman Decker <roman.decker@gmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0"
+    }
+}
