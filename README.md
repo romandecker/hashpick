@@ -31,7 +31,7 @@ console.log(colorize('db'), 'Reconnecting to database');
 console.log(colorize('server'), 'GET / 200');
 ```
 
-![Output](./docs/output.png)
+![Output](https://cdn.rawgit.com/DeX3/hashpick/267e79d4/docs/output.png)
 
 ## Installation
 
