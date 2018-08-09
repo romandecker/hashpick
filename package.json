@@ -1,7 +1,7 @@
 {
     "name": "hashpick",
     "version": "1.0.0",
-    "description": "Pick a item from an array based on the hash of a value",
+    "description": "Pick an item from an array based on the hash of a value",
     "main": "hashpick.js",
     "scripts": {
         "test": "mocha test"
@@ -10,6 +10,7 @@
     "license": "ISC",
     "devDependencies": {
         "chai": "^4.1.2",
+        "chalk": "^2.4.1",
         "mocha": "^5.2.0"
     }
 }
