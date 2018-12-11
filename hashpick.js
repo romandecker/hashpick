@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-module.exports = function hashpicker(items) {
+module.exports = function hashpick(items) {
     return function(input) {
         const buf = crypto
             .createHash('md5')
@@ -15,3 +15,5 @@ module.exports = function hashpicker(items) {
         return items[Math.abs(n) % items.length];
     };
 };
+
+module.exports.default = module.exports.hashpick = module.exports;
