@@ -3,6 +3,8 @@
     "version": "1.0.2",
     "description": "Pick an item from an array based on the hash of a value",
     "main": "hashpick.js",
+    "homepage": "https://github.com/DeX3/hashpick",
+    "repository": "git@github.com:DeX3/hashpick.git",
     "scripts": {
         "test": "mocha test"
     },
