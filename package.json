@@ -1,18 +1,25 @@
 {
-    "name": "hashpick",
-    "version": "1.0.3",
-    "description": "Pick an item from an array based on the hash of a value",
-    "main": "hashpick.js",
-    "homepage": "https://github.com/DeX3/hashpick",
-    "repository": "git@github.com:DeX3/hashpick.git",
-    "scripts": {
-        "test": "mocha test"
-    },
-    "author": "Roman Decker <roman.decker@gmail.com>",
-    "license": "ISC",
-    "devDependencies": {
-        "chai": "^4.1.2",
-        "chalk": "^2.4.1",
-        "mocha": "^5.2.0"
-    }
+  "name": "hashpick",
+  "version": "1.0.3",
+  "description": "Pick an item from an array based on the hash of a value",
+  "main": "lib/hashpick.js",
+  "types": "lib/hashpick.d.ts",
+  "homepage": "https://github.com/DeX3/hashpick",
+  "repository": "git@github.com:DeX3/hashpick.git",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config jest.config.json"
+  },
+  "author": "Roman Decker <roman.decker@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
+    "chai": "^4.1.2",
+    "chalk": "^2.4.1",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {}
 }

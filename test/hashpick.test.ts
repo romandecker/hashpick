@@ -1,7 +1,7 @@
-const createPicker = require('../lib/hashpick.js');
+import createPicker from '../src/hashpick';
 
 describe('hashpicker', function() {
-  it('should work when importing via require', () => {
+  it('should always return an item from the list', () => {
     const items = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
     const pick = createPicker(items);
 
