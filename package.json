@@ -1,6 +1,6 @@
 {
   "name": "hashpick",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Pick an item from an array based on the hash of a value",
   "main": "lib/hashpick.js",
   "types": "lib/hashpick.d.ts",
