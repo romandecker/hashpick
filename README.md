@@ -8,7 +8,7 @@ In short, this module enables you to do something like this:
 
 ``` javascript
 const chalk = require('chalk');
-const pickColor = require('hashpick')([
+const pickColor = require('hashpick').default([
     chalk.red,
     chalk.green,
     chalk.yellow,
@@ -46,7 +46,7 @@ yarn add hashpick
 Use the exported function to create a new picker-function based on an array of choices:
 
 ``` shell
-const hashpick = require('hashpick');
+const hashpick = require('hashpick').default;
 const pickNumber = hashpick(['one', 'two', 'three']);
 
 pickNumber('any value'); // -> 'three'

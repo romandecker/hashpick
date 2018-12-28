@@ -1,4 +1,4 @@
-const createPicker = require('../lib/hashpick.js');
+const createPicker = require('../lib/hashpick.js').default;
 
 describe('hashpicker', function() {
   it('should work when importing via require', () => {

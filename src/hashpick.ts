@@ -4,8 +4,6 @@ export type PickerInput = string | Buffer | DataView;
 
 export type Picker<T> = (PickerInput) => T;
 
-module.exports = createPicker;
-
 export function createPicker<T>(items: T[]): Picker<T> {
   return function(input: PickerInput): T {
     const buf = createHash('md5')
