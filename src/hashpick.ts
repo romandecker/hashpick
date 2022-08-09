@@ -1,21 +1,20 @@
-import { createHash } from 'crypto';
+export interface Picker<T> {
+  (input: string): T;
+}
 
-export type PickerInput = string | Buffer | DataView;
+function hashToInt(str: string) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash &= hash; // Convert to 32bit integer
+  }
+  return new Uint32Array([hash])[0];
+}
 
-export type Picker<T> = (PickerInput) => T;
-
-export function createPicker<T>(items: T[]): Picker<T> {
-  return function(input: PickerInput): T {
-    const buf = createHash('md5')
-      .update(input)
-      .digest();
-
-    let n = 0;
-    for (let i = 0; i < buf.length; i += 6) {
-      n ^= buf.readUIntBE(i, Math.min(6, buf.length - i));
-    }
-
-    return items[Math.abs(n) % items.length];
+export function createPicker<T>(items: ReadonlyArray<T>): Picker<T> {
+  return function (input: string): T {
+    return items[hashToInt(input) % items.length];
   };
 }
 
