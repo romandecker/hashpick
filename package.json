@@ -2,14 +2,24 @@
   "name": "hashpick",
   "version": "4.0.0",
   "description": "Pick an item from an array based on the hash of a value",
-  "main": "lib/hashpick.js",
-  "types": "lib/hashpick.d.ts",
+  "main": "lib/cjs/hashpick.js",
+  "types": "lib/cjs/hashpick.d.ts",
   "homepage": "https://github.com/DeX3/hashpick",
   "repository": "git@github.com:DeX3/hashpick.git",
   "scripts": {
-    "build": "tsc",
-    "dev": "run-s \"build -- --watch --preserveWatchOutput\"",
+    "compile": "tsc",
+    "compile:all": "run-p compile:cjs compile:esm",
+    "compile:cjs": "run-s \"compile -- --module commonjs --outDir lib/cjs\"",
+    "compile:esm": "run-s \"compile -- --module es6 --outDir lib/esm\"",
+    "build": "run-s clean compile:all",
+    "clean": "rimraf lib",
     "test": "jest --config jest.config.json"
+  },
+  "exports": {
+    ".": {
+      "require": "./lib/cjs/hashpick.js",
+      "import": "./lib/esm/hashpick.js"
+    }
   },
   "author": "Roman Decker <roman.decker@gmail.com>",
   "license": "ISC",
@@ -20,5 +30,8 @@
     "npm-run-all": "^4.1.5",
     "ts-jest": "^28.0.7",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
   }
 }
